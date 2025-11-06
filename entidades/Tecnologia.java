@@ -1,7 +1,7 @@
 package entidades;
 
 public class Tecnologia {
-    public Tecnologia(long id, String modelo, String descricao, double valorBase, double peso, double temperatura) {
+    public Tecnologia(long id, String modelo, String descricao, double valorBase, double peso, double temperatura, Fornecedor fornecedor) {
         this.id = id;
         this.modelo = modelo;
         this.descricao = descricao;
