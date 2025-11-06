@@ -16,6 +16,7 @@ public class Tecnologia {
 	private double valorBase;
 	private double peso;
 	private double temperatura;
+    private Fornecedor fornecedor;
 
     public long getId() {
         return id;
@@ -66,7 +67,6 @@ public class Tecnologia {
     }
 
     public void defineFornecedor(Fornecedor f) {
-
+    this.fornecedor = f;
 	}
-
 }

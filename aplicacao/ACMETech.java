@@ -78,9 +78,17 @@ public class ACMETech {
                 double valorBase = sc.nextDouble();
                 double peso = sc.nextDouble();
                 double temperatura = sc.nextDouble();
-                int codFornecedor = sc.nextInt();
+                String codFornecedorStr = sc.hasNext() ? sc.next() : ""; // pode estar vazio
+                Fornecedor fornecedor = null;
 
-                Fornecedor fornecedor = buscarFornecedorPorCodigo(codFornecedor);
+                if (!codFornecedorStr.isEmpty()) {
+                    try {
+                        int codFornecedor = Integer.parseInt(codFornecedorStr);
+                        fornecedor = buscarFornecedorPorCodigo(codFornecedor);
+                    } catch (NumberFormatException e) {
+                        System.err.println("Código de fornecedor inválido em TECNOLOGIASENTRADA.CSV: " + codFornecedorStr);
+                    }
+                }
                 Tecnologia t = new Tecnologia(id, modelo, descricao, valorBase, peso, temperatura, fornecedor);
                 tecnologias.add(t);
             }
