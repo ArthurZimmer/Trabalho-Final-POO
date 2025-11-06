@@ -1,10 +1,9 @@
 package aplicacao;
 
-import java.util.Date;
-import entidades.Area;
-import entidades.Comprador;
-import entidades.Fornecedor;
-import entidades.Tecnologia;
+import java.nio.file.Files;
+import java.util.*;
+
+import entidades.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,9 +12,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
 
 
 import static java.nio.file.Files.newBufferedReader;
@@ -91,7 +87,29 @@ public class ACMETech {
         }catch (IOException e){
             System.err.println("Erro ao ler TECNOLOGIAS.CSV: " + e.getMessage());
         }
+        Path pathVendas = Paths.get("VENDASENTRADA.CSV");
+        Queue<Venda> FilaDevendas = new LinkedList<>();
+        try (BufferedReader br = Files.newBufferedReader(pathVendas, Charset.forName("UTF-8"))) {
+            String linha;
+            while((linha= br.readLine())!=null){
+                Scanner sc = new Scanner(linha).useDelimiter(";");
+
+                int num = sc.nextInt();
+                String data = sc.next();
+                int codComprador = sc.nextInt();
+                int idTecnologia = sc.nextInt();
+
+                Comprador comprador = buscarCompradorPorCodigo(codComprador);
+                Tecnologia tecnologia = buscarTecnologiaPorId(idTecnologia);
+
+                Venda v = new Venda(num, data, comprador, tecnologia);
+                FilaDevendas.add(v);
+            }
+        }catch(IOException e){
+            System.err.println("Erro ao ler VENDASENTRADA.CSV: " + e.getMessage());
+        }
     }
+
 	public void executar() {
 
 	}
@@ -99,6 +117,22 @@ public class ACMETech {
         for (Fornecedor fornecedor : fornecedores) {
             if (fornecedor.getCod() == codFornecedor) {
                 return fornecedor;
+            }
+        }
+        return null;
+    }
+    private  Comprador buscarCompradorPorCodigo(int codComprador){
+        for (Comprador comprador : compradores) {
+            if (comprador.getCod() == codComprador) {
+                return comprador;
+            }
+        }
+        return null;
+    }
+    private Tecnologia buscarTecnologiaPorId(int idTecnologia){
+        for (Tecnologia tecnologia : tecnologias) {
+            if (tecnologia.getId() == idTecnologia) {
+                return tecnologia;
             }
         }
         return null;
