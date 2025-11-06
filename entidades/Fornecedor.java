@@ -28,6 +28,14 @@ public class Fornecedor extends Participante {
         this.area = area;
     }
 
+    @Override
+    public String toString() {
+        return "Fornecedor{" +
+                "fundacao=" + fundacao +
+                ", area=" + area +
+                '}';
+    }
+
     public String geraDescricao() {
 		return null;
 	}

@@ -25,6 +25,11 @@ public abstract class Participante {
         this.nome = nome;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     public abstract String geraDescricao();
 
 }
