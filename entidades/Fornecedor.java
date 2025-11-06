@@ -36,8 +36,8 @@ public class Fornecedor extends Participante {
                 '}';
     }
 
+    @Override
     public String geraDescricao() {
-		return null;
-	}
-
+        return getCod() + ";" + getNome() + ";" + getFundacao() + ";" + getArea();
+    }
 }

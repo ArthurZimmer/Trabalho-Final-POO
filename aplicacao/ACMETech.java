@@ -111,7 +111,6 @@ public class ACMETech {
     }
 
 	public void executar() {
-
 	}
     private Fornecedor buscarFornecedorPorCodigo(int codFornecedor){
         for (Fornecedor fornecedor : fornecedores) {

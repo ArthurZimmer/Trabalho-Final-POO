@@ -26,8 +26,8 @@ public class Comprador extends Participante {
         this.email = email;
     }
 
+    @Override
     public String geraDescricao() {
-		return null;
-	}
-
+        return getNome() + ";" + getPais() + ";" + getEmail() +";"+ getCod();
+    }
 }
