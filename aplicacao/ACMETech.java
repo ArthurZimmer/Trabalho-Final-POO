@@ -18,7 +18,7 @@ import static java.nio.file.Files.newBufferedReader;
 
 public class ACMETech {
 
-    private List <Fornecedor> fornecedores = new ArrayList<>();
+    private Fornecedores fornecedores;
     private List <Comprador> compradores = new ArrayList<>();
     private List <Tecnologia> tecnologias = new ArrayList<>();
 
@@ -38,8 +38,8 @@ public class ACMETech {
                 if (tipo == 1) {
                     String fundacaoStr = sc.next();
                     String areaStr = sc.next();
-
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
                     Date fundacao = null;
                     try {
                         fundacao = sdf.parse(fundacaoStr);
@@ -47,6 +47,7 @@ public class ACMETech {
                         System.err.println("Formato de data inválido em PARTICIPANTESENTRADA.CSV: " + fundacaoStr);
                         continue;
                     }
+
                     Area areaEnum;
                     try {
                         areaEnum = Area.valueOf(areaStr.trim().toUpperCase());
@@ -55,16 +56,19 @@ public class ACMETech {
                         continue;
                     }
 
-                    fornecedores.add(new Fornecedor(cod, nome, fundacao, areaEnum));
+                    fornecedores.addFornecedor(new Fornecedor(cod, nome, fundacao, areaEnum));
                 } else if (tipo == 2) {
                     String pais = sc.next();
                     String email = sc.next();
                     compradores.add(new Comprador(cod, nome, pais, email));
+                } else {
+                    throw new IOException("Tipo de participante inválido.");
                 }
             }
         } catch (IOException e) {
             System.err.println("Erro ao ler PARTICIPANTESENTRADA.CSV: " + e.getMessage());
         }
+
         Path pathTecnologias = Paths.get("TECNOLOGIASENTRADA.CSV");
         try (BufferedReader br = newBufferedReader(pathTecnologias, Charset.forName("UTF-8"))) {
             String linha;
@@ -84,7 +88,7 @@ public class ACMETech {
                 if (!codFornecedorStr.isEmpty()) {
                     try {
                         int codFornecedor = Integer.parseInt(codFornecedorStr);
-                        fornecedor = buscarFornecedorPorCodigo(codFornecedor);
+                        fornecedor = fornecedores.buscarFornecedorPorCodigo(codFornecedor);
                     } catch (NumberFormatException e) {
                         System.err.println("Código de fornecedor inválido em TECNOLOGIASENTRADA.CSV: " + codFornecedorStr);
                     }
@@ -95,6 +99,7 @@ public class ACMETech {
         }catch (IOException e){
             System.err.println("Erro ao ler TECNOLOGIAS.CSV: " + e.getMessage());
         }
+
         Path pathVendas = Paths.get("VENDASENTRADA.CSV");
         Queue<Venda> FilaDevendas = new LinkedList<>();
         try (BufferedReader br = Files.newBufferedReader(pathVendas, Charset.forName("UTF-8"))) {
@@ -120,14 +125,7 @@ public class ACMETech {
 
 	public void executar() {
 	}
-    private Fornecedor buscarFornecedorPorCodigo(int codFornecedor){
-        for (Fornecedor fornecedor : fornecedores) {
-            if (fornecedor.getCod() == codFornecedor) {
-                return fornecedor;
-            }
-        }
-        return null;
-    }
+
     private  Comprador buscarCompradorPorCodigo(int codComprador){
         for (Comprador comprador : compradores) {
             if (comprador.getCod() == codComprador) {
@@ -136,6 +134,7 @@ public class ACMETech {
         }
         return null;
     }
+
     private Tecnologia buscarTecnologiaPorId(int idTecnologia){
         for (Tecnologia tecnologia : tecnologias) {
             if (tecnologia.getId() == idTecnologia) {
