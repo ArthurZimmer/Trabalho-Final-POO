@@ -2,11 +2,11 @@ package UI;
 
 import javax.swing.*;
 
-public class Janela1 extends JFrame {
+public class GerenciadorDeJanelas extends JFrame {
 
     private janelaPrincipal janelaPrimaria;
 
-    public Janela1() {
+    public GerenciadorDeJanelas() {
         super();
         setVisible(true);
         setSize(800, 400);
@@ -15,6 +15,4 @@ public class Janela1 extends JFrame {
         janelaPrimaria = new janelaPrincipal();
         add(janelaPrimaria.getPainel());
     }
-
-
 }
