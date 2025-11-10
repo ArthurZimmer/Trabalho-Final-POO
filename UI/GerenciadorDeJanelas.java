@@ -6,6 +6,7 @@ public class GerenciadorDeJanelas extends JFrame {
 
     private painelPrincipal primaria;
     private painelCadastro cadastro;
+    private painelRelatorio relatorio;
 
     public GerenciadorDeJanelas() {
         super();
@@ -15,6 +16,7 @@ public class GerenciadorDeJanelas extends JFrame {
 
         primaria = new painelPrincipal(this);
         cadastro = new painelCadastro();
+        relatorio = new painelRelatorio();
 
         this.setContentPane(primaria.getPainel());
         setVisible(true);
@@ -27,7 +29,10 @@ public class GerenciadorDeJanelas extends JFrame {
                 this.pack();
                 this.setSize(800,800);
                 break;
-            case 0:
-
+            case 2:
+                this.setContentPane(relatorio.getPainel());
+                this.pack();
+                this.setSize(800, 400);
+                break;
         }
     }}
