@@ -10,7 +10,7 @@ public class GerenciadorDeJanelas extends JFrame {
     public GerenciadorDeJanelas() {
         super();
         setSize(800, 800);
-        setTitle("Minha Janela");
+        setTitle("ACMETECH");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         primaria = new painelPrincipal(this);
@@ -23,7 +23,7 @@ public class GerenciadorDeJanelas extends JFrame {
     public void mudaJanela(int painel) {
         switch(painel) {
             case 1:
-                this.setContentPane(cadastro);
+                this.setContentPane(cadastro.getPainel());
                 this.pack();
                 this.setSize(800,800);
                 break;
