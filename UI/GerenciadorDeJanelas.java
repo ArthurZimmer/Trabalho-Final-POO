@@ -4,15 +4,30 @@ import javax.swing.*;
 
 public class GerenciadorDeJanelas extends JFrame {
 
-    private janelaPrincipal janelaPrimaria;
+    private painelPrincipal primaria;
+    private painelCadastro cadastro;
 
     public GerenciadorDeJanelas() {
         super();
-        setVisible(true);
-        setSize(800, 400);
+        setSize(800, 800);
         setTitle("Minha Janela");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        janelaPrimaria = new janelaPrincipal();
-        add(janelaPrimaria.getPainel());
+
+        primaria = new painelPrincipal(this);
+        cadastro = new painelCadastro();
+
+        this.setContentPane(primaria.getPainel());
+        setVisible(true);
     }
-}
+
+    public void mudaJanela(int painel) {
+        switch(painel) {
+            case 1:
+                this.setContentPane(cadastro);
+                this.pack();
+                this.setSize(800,800);
+                break;
+            case 0:
+
+        }
+    }}
