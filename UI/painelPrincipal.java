@@ -19,6 +19,7 @@ public class painelPrincipal extends JPanel{
         this.gj = gj;
         botaoCadastrar.addActionListener(e -> gj.mudaJanela(1));
         botaoRelatorio.addActionListener(e -> gj.mudaJanela(2));
+        botaoExit.addActionListener(e -> System.exit(0));
     }
 }
 

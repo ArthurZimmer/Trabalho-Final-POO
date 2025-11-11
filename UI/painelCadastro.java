@@ -9,13 +9,18 @@ public class painelCadastro extends JPanel {
     private JButton cadastrarComprador;
     private JButton cadastrarTecnologia;
     private JButton cadastrarFornecedor;
+    private JButton botaoExit;
+    GerenciadorDeJanelas gerenciadorDeJanelas;
 
     public JPanel getPainel() {
         return panelCadastro;
     }
 
-    public painelCadastro() {
+    public painelCadastro(GerenciadorDeJanelas gerenciadorDeJanelas) {
+
         super();
+        this.gerenciadorDeJanelas = gerenciadorDeJanelas;
+        botaoExit.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(3));
     }
 }
 
