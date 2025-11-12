@@ -6,7 +6,6 @@ import java.security.PublicKey;
 public class painelRelatorio extends JPanel {
 
     private JPanel panel1;
-    private JLabel texto;
 
 
     public JPanel getPainel() {

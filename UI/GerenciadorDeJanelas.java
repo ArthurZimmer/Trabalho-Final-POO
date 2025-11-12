@@ -10,6 +10,7 @@ public class GerenciadorDeJanelas extends JFrame {
     private painelCadastro cadastro;
     private painelRelatorio relatorio;
     private painelCadastroVenda venda;
+    private painelCadastroTecnologia tecnologia;
 
     public GerenciadorDeJanelas() {
         super();
@@ -20,6 +21,7 @@ public class GerenciadorDeJanelas extends JFrame {
         primaria = new painelPrincipal(this);
         cadastro = new painelCadastro(this);
         venda = new painelCadastroVenda(this);
+        tecnologia = new painelCadastroTecnologia(this);
         relatorio = new painelRelatorio();
 
         this.setContentPane(primaria.getPainel());
@@ -45,6 +47,11 @@ public class GerenciadorDeJanelas extends JFrame {
                 break;
             case 4:
                 this.setContentPane(venda.getPanel());
+                this.pack();
+                this.setSize(1000,1000);
+                break;
+            case 5:
+                this.setContentPane(tecnologia.getPanel());
                 this.pack();
                 this.setSize(1000,1000);
                 break;

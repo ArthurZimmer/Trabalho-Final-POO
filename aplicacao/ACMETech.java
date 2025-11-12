@@ -20,9 +20,8 @@ import static java.nio.file.Files.newBufferedReader;
 public class ACMETech {
 
     private Fornecedores fornecedores;
-    private List <Comprador> compradores = new ArrayList<>();
-    private List <Tecnologia> tecnologias = new ArrayList<>();
-
+    private Tecnologias tecnologias;
+    private Compradores compradores;
 
 	public void inicializar() {
         Path pathParticipantes = Paths.get("PARTICIPANTESENTRADA.CSV");
@@ -61,7 +60,7 @@ public class ACMETech {
                 } else if (tipo == 2) {
                     String pais = sc.next();
                     String email = sc.next();
-                    compradores.add(new Comprador(cod, nome, pais, email));
+                    compradores.addComprador(new Comprador(cod, nome, pais, email));
                 } else {
                     throw new IOException("Tipo de participante inválido.");
                 }
@@ -95,7 +94,7 @@ public class ACMETech {
                     }
                 }
                 Tecnologia t = new Tecnologia(id, modelo, descricao, valorBase, peso, temperatura, fornecedor);
-                tecnologias.add(t);
+                tecnologias.addTecnologia(t);
             }
         }catch (IOException e){
             System.err.println("Erro ao ler TECNOLOGIAS.CSV: " + e.getMessage());
@@ -129,7 +128,7 @@ public class ACMETech {
 	}
 
     private  Comprador buscarCompradorPorCodigo(int codComprador){
-        for (Comprador comprador : compradores) {
+        for (Comprador comprador : compradores.getCompradores()) {
             if (comprador.getCod() == codComprador) {
                 return comprador;
             }
@@ -138,7 +137,7 @@ public class ACMETech {
     }
 
     private Tecnologia buscarTecnologiaPorId(int idTecnologia){
-        for (Tecnologia tecnologia : tecnologias) {
+        for (Tecnologia tecnologia : tecnologias.getTecnologias()) {
             if (tecnologia.getId() == idTecnologia) {
                 return tecnologia;
             }
