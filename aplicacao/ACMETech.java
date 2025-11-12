@@ -3,6 +3,7 @@ package aplicacao;
 import java.nio.file.Files;
 import java.util.*;
 
+import UI.GerenciadorDeJanelas;
 import entidades.*;
 
 import java.io.BufferedReader;
@@ -124,6 +125,8 @@ public class ACMETech {
     }
 
 	public void executar() {
+            GerenciadorDeJanelas palantir = new GerenciadorDeJanelas();
+
 	}
 
     private  Comprador buscarCompradorPorCodigo(int codComprador){
@@ -142,5 +145,8 @@ public class ACMETech {
             }
         }
         return null;
+    }
+    public Fornecedores getFornecedores() {
+        return fornecedores;
     }
 }

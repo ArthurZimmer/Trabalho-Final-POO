@@ -1,5 +1,7 @@
 package UI;
 
+import aplicacao.ACMETech;
+
 import javax.swing.*;
 
 public class GerenciadorDeJanelas extends JFrame {
@@ -9,7 +11,7 @@ public class GerenciadorDeJanelas extends JFrame {
     private painelRelatorio relatorio;
     private painelCadastroVenda venda;
 
-    public GerenciadorDeJanelas() {
+    public GerenciadorDeJanelas(ACMETech sistema) {
         super();
         setSize(1000, 1000);
         setTitle("ACMETECH");
@@ -47,4 +49,5 @@ public class GerenciadorDeJanelas extends JFrame {
                 this.setSize(1000,1000);
                 break;
         }
-    }}
+    }
+}
