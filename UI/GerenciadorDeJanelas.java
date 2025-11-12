@@ -1,6 +1,9 @@
 package UI;
 
 import aplicacao.ACMETech;
+import entidades.Fornecedor;
+import entidades.Fornecedores;
+import entidades.Tecnologias;
 
 import javax.swing.*;
 
@@ -11,6 +14,8 @@ public class GerenciadorDeJanelas extends JFrame {
     private painelRelatorio relatorio;
     private painelCadastroVenda venda;
     private painelCadastroTecnologia tecnologia;
+    private Fornecedores fornecedores;
+    private Tecnologias tecnologias;
 
     public GerenciadorDeJanelas() {
         super();
@@ -21,7 +26,7 @@ public class GerenciadorDeJanelas extends JFrame {
         primaria = new painelPrincipal(this);
         cadastro = new painelCadastro(this);
         venda = new painelCadastroVenda(this);
-        tecnologia = new painelCadastroTecnologia(this);
+        tecnologia = new painelCadastroTecnologia(this, fornecedores, tecnologias);
         relatorio = new painelRelatorio();
 
         this.setContentPane(primaria.getPainel());
