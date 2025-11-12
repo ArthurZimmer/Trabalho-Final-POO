@@ -23,6 +23,7 @@ public class painelCadastro extends JPanel {
         cadastrarVenda.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(4));
         cadastrarTecnologia.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(5));
         botaoExit.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(3));
+        cadastrarFornecedor.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(6));
     }
 }
 

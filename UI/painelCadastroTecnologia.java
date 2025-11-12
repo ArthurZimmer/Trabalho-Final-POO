@@ -41,6 +41,7 @@ public class painelCadastroTecnologia extends JPanel {
     private void BtnCadastraTecnologiaActionPerformed(java.awt.event.ActionEvent evt) {
         String idStr = campoID.getText();
         long id = Long.parseLong(idStr);
+        int cod = Integer.parseInt(idStr);
 
         String modelo = campoModelo.getText();
         String desc = campoDescricao.getText();
@@ -59,12 +60,12 @@ public class painelCadastroTecnologia extends JPanel {
 
         if (!idStr.isEmpty()) {
             try {
-                fornecedor = fornecedores.buscarFornecedorPorCodigo(idStr);
+                fornecedor1 = fornecedores.buscarFornecedorPorCodigo(id);
             } catch (NullPointerException e) {
                 System.err.println("Nome de fornecedor inválido: " + fornecedor);
             }
         }
-        Tecnologia t = new Tecnologia(id, modelo, desc, valorBase, peso, temperatura, fornecedor);
+        Tecnologia t = new Tecnologia(id, modelo, desc, valorBase, peso, temperatura, fornecedor1);
         tecnologias.addTecnologia(t);
     }
 
