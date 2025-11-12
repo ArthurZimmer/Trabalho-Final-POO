@@ -125,7 +125,6 @@ public class ACMETech {
     }
 
 	public void executar() {
-            GerenciadorDeJanelas palantir = new GerenciadorDeJanelas();
 
 	}
 

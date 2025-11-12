@@ -11,7 +11,7 @@ public class GerenciadorDeJanelas extends JFrame {
     private painelRelatorio relatorio;
     private painelCadastroVenda venda;
 
-    public GerenciadorDeJanelas(ACMETech sistema) {
+    public GerenciadorDeJanelas() {
         super();
         setSize(1000, 1000);
         setTitle("ACMETECH");
