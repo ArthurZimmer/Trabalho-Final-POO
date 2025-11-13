@@ -1,14 +1,27 @@
 package UI;
 
 import javax.swing.*;
-import java.security.PublicKey;
 
 public class painelRelatorio extends JPanel {
 
-    private JPanel panel1;
+    private JPanel PainelRelatorio;
+    private JButton relatórioDeFornecedoresButton;
+    private JButton relatorioDeCompradoresButton;
+    private JButton relatorioDeVendasButton;
+    private JButton relatórioDeTecnologiasButton;
+    private JButton botaoExit;
+    private GerenciadorDeJanelas gerenciadorDeJanelas;
+
+
 
 
     public JPanel getPainel() {
-        return panel1;
+        return PainelRelatorio;
     }
+
+   public painelRelatorio(GerenciadorDeJanelas gerenciadorDeJanelas) {
+        super();
+        this.gerenciadorDeJanelas = gerenciadorDeJanelas;
+       botaoExit.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(2));
+   }
 }

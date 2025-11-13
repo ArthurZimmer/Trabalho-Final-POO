@@ -29,8 +29,7 @@ public class GerenciadorDeJanelas extends JFrame {
         venda = new painelCadastroVenda(this);
         tecnologia = new painelCadastroTecnologia(this, fornecedores, tecnologias);
         fornecedor = new painelCadastrarFornecedor(this, fornecedores);
-
-        relatorio = new painelRelatorio();
+        relatorio = new painelRelatorio(GerenciadorDeJanelas.this);
 
         this.setContentPane(primaria.getPainel());
         setVisible(true);
