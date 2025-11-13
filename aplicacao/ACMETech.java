@@ -82,7 +82,7 @@ public class ACMETech {
                 double valorBase = sc.nextDouble();
                 double peso = sc.nextDouble();
                 double temperatura = sc.nextDouble();
-                String codFornecedorStr = sc.hasNext() ? sc.next() : ""; // pode estar vazio
+                String codFornecedorStr = sc.hasNext() ? sc.next() : "";
                 Fornecedor fornecedor = null;
 
                 if (!codFornecedorStr.isEmpty()) {
@@ -116,7 +116,10 @@ public class ACMETech {
                 Tecnologia tecnologia = buscarTecnologiaPorId(idTecnologia);
 
                 Venda v = new Venda(num, data, comprador, tecnologia);
+                v.calculaValorFinal(FilaDevendas);
                 FilaDevendas.add(v);
+
+
             }
         }catch(IOException e){
             System.err.println("Erro ao ler VENDASENTRADA.CSV: " + e.getMessage());

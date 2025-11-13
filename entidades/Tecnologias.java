@@ -22,11 +22,11 @@ public class Tecnologias {
         for(int i = 0; i < tecnologias.size(); i++){
             Tecnologia tec = tecnologias.get(i);
 
-            // verifica duplicidade de ID
+
             if (tec.getId() == t.getId())
                 throw new IllegalStateException("Código de usuário repetido, tente novamente.");
 
-            // insere já ordenado
+
             if (t.getId() < tec.getId()) {
                 tecnologias.add(i, t);
                 return true;

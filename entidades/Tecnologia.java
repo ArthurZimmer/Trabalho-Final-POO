@@ -69,4 +69,8 @@ public class Tecnologia {
     public void defineFornecedor(Fornecedor f) {
     this.fornecedor = f;
 	}
+
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
 }
