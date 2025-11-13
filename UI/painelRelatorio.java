@@ -22,6 +22,6 @@ public class painelRelatorio extends JPanel {
    public painelRelatorio(GerenciadorDeJanelas gerenciadorDeJanelas) {
         super();
         this.gerenciadorDeJanelas = gerenciadorDeJanelas;
-       botaoExit.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(2));
+       botaoExit.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(3));
    }
 }

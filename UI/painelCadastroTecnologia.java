@@ -35,7 +35,7 @@ public class painelCadastroTecnologia extends JPanel {
         this.tecnologias = tecnologias;
 
 
-        botaoExit.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(4));
+        botaoExit.addActionListener(e -> gerenciadorDeJanelas.mudaJanela(1));
     }
 
     private void BtnCadastraTecnologiaActionPerformed(java.awt.event.ActionEvent evt) {

@@ -32,7 +32,7 @@ public class painelCadastrarFornecedor extends JPanel{
 
     }
 
-    private void BtnCadastrarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCadastrarFornecedorActionPerformed
+    private void BtnCadastrarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {
         String codString = campoCodigo.getText();
         long cod = Long.parseLong(codString);
 
