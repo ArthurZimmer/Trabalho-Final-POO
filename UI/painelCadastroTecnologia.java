@@ -60,7 +60,7 @@ public class painelCadastroTecnologia extends JPanel {
 
         if (!idStr.isEmpty()) {
             try {
-                fornecedor1 = fornecedores.buscarFornecedorPorCodigo(id);
+                fornecedor1 = fornecedores.buscarFornecedorPorCodigo((int) id);
             } catch (NullPointerException e) {
                 System.err.println("Nome de fornecedor inválido: " + fornecedor);
             }
