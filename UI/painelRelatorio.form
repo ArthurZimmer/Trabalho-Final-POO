@@ -24,7 +24,7 @@
           <text value="Relatorio de Compradores"/>
         </properties>
       </component>
-      <component id="5a8c3" class="javax.swing.JButton" binding="relatórioDeFornecedoresButton" default-binding="true">
+      <component id="5a8c3" class="javax.swing.JButton" binding="relatorioDeFornecedoresButton">
         <constraints>
           <grid row="7" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -32,7 +32,7 @@
           <text value="Relatório de Fornecedores"/>
         </properties>
       </component>
-      <component id="8ba9d" class="javax.swing.JButton" binding="relatórioDeTecnologiasButton" default-binding="true">
+      <component id="8ba9d" class="javax.swing.JButton" binding="relatorioDeTecnologiasButton">
         <constraints>
           <grid row="5" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
