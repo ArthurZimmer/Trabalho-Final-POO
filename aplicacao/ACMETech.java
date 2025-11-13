@@ -124,7 +124,8 @@ public class ACMETech {
     }
 
 	public void executar() {
-
+        GerenciadorDeJanelas panel = new GerenciadorDeJanelas();
+        panel.setVisible(true);
 	}
 
     private  Comprador buscarCompradorPorCodigo(int codComprador){

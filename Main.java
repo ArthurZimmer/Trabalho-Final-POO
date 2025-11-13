@@ -1,8 +1,9 @@
 import UI.*;
+import aplicacao.ACMETech;
 
 public class Main {
     public static void main(String []args) {
-        GerenciadorDeJanelas panel = new GerenciadorDeJanelas();
-        panel.setVisible(true);
+        ACMETech abacaxi = new ACMETech();
+        abacaxi.executar();
     }
 }
