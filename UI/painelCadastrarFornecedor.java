@@ -15,6 +15,7 @@ public class painelCadastrarFornecedor extends JPanel{
     private JTextField campoNome;
     private JTextField campoCodigo;
     private JPanel Jpanel;
+    private JButton voltar;
     private GerenciadorDeJanelas gerenciadorDeJanelas;
     private Area areaEnum;
     private Fornecedor fornecedor;
@@ -28,7 +29,7 @@ public class painelCadastrarFornecedor extends JPanel{
         super();
         this.gerenciadorDeJanelas = gerenciadorDeJanelas;
         this.fornecedores = fornecedores;
-
+        voltar.addActionListener(e->gerenciadorDeJanelas.mudaJanela(3));
 
     }
 
